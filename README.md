@@ -68,7 +68,7 @@ Contributions to Touhou Mugen-kai are welcome! If you have any bug reports, feat
 
 ## Acknowledgements
 - [Dear PyGui](https://github.com/hoffstadt/DearPyGui) for the GUI framework used in this project.
-- [Touhou Project](http://www16.big.or.jp/~zun/) for creating the wonderful world of Touhou.
+- [Touhou Project](http://www16.big.or.jp/~zun/) ZUN for creating the wonderful world of Touhou.
 
 ## License
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
