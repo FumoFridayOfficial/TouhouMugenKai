@@ -32,12 +32,6 @@ Thank you for your support!
 - Start games with or without patches
 - Support for launching PC-98 games
 
-## Features
-- Launch official Touhou games with ease
-- Access a curated collection of Touhou fan games
-- Automatic updates and version control
-- Explore additional Touhou-related content and resources
-
 ## Known Limitations
 - Social features and additional functionalities haven't started development.
 - Only local games and fan games are supported.
