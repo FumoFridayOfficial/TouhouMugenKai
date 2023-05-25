@@ -9,6 +9,22 @@ In the upcoming days i'll release some gifs and visual help i've created the rea
 ## What is Touhou Mugen-kai
 Touhou Mugen-kai is a Python-based GUI launcher designed to provide easy access to a wide range of Touhou games and fan games. It aims to create a unified platform for Touhou enthusiasts to manage their game library, launch games, and explore the rich world of Touhou fan games.
 
+## Contributions Welcome!
+
+Touhou Mugenkai is an open-source project, and we welcome contributions from the community. Whether you're a seasoned developer, a fan of Touhou, or simply excited about the project, we'd love to have your help!
+
+**How to Contribute:**
+
+- Found a bug? Have an idea for an awesome feature? Don't hesitate to [open an issue](https://github.com/FumoFridayOfficial/TouhouMugenKai/issues) and let us know.
+- Interested in adding new functionality or fixing existing code? Fork the repository, make your changes, and submit a pull request.
+- Want to improve documentation, write tutorials, or provide translations? Your contributions are highly appreciated.
+- Spread the word! Share Touhou Mugenkai with fellow Touhou fans and developers who might be interested in contributing.
+
+No contribution is too small. Every line of code, idea, or feedback can make a difference.
+
+Thank you for your support!
+
+
 ## Features
 - Launcher for all Touhou related games and fan games
 - Library system to create, edit, and remove game libraries
@@ -26,6 +42,12 @@ Touhou Mugen-kai is a Python-based GUI launcher designed to provide easy access 
 - Social features and additional functionalities haven't started development.
 - Only local games and fan games are supported.
 - Bugs may happen, if anything restart the launcher for quick fix.
+
+## Planned features
+# Warning this features can only be made with alot of time or bigger team.
+- Thcrap Patcher Integration
+- Social Features
+- Possible Fan Game Store?
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/FumoFridayOfficial/TouhouMugenKai.git`
@@ -51,5 +73,4 @@ Contributions to Touhou Mugen-kai are welcome! If you have any bug reports, feat
 ## License
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
-## Contact
-<Fill this later>
+Fumos are coding...
