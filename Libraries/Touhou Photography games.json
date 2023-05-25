@@ -1,0 +1,59 @@
+{
+    "Library": "Touhou Photography games",
+    "games": [
+        {
+            "title": "Touhou 16.5 - Violet Detector",
+            "installed": false,
+            "patched": false,
+            "unpatched_file": "",
+            "patched_file": "",
+            "desc": " As the sole playable character, Sumeriko is trapped within a nightmare where Gensokyo residents consistently try to attack her with a variety of spellcards where she can only defend herself from them using her phone to take photos and post on social media. ",
+            "developer": "Team Shanghai Alice",
+            "publisher": "Team Shanghai Alice",
+            "released": "10/08/2018",
+            "genre": "Vertical Bullet Hell Photography Shooting Game",
+            "id": 27,
+            "cover": null,
+            "abbreviation": "VD",
+            "number": "16.5",
+            "character": "Sumireko Usami",
+            "path_valid": false
+        },
+        {
+            "title": "Touhou 12.5 - Double Spoiler",
+            "installed": false,
+            "patched": false,
+            "unpatched_file": "",
+            "patched_file": "",
+            "desc": " There's a new reporter in town - a newer, more modern reporter sporting a cell phone cam - and she's trying to steal Aya's scoops! Can Aya possibly put the word \"friendly\" before \"rivalry,\" or will it end in all-out war? ",
+            "developer": "Team Shanghai Alice",
+            "publisher": "Team Shanghai Alice",
+            "released": "14/03/2010",
+            "genre": "Vertical Bullet Hell Photography Shooting Game",
+            "id": 17,
+            "cover": null,
+            "abbreviation": "DS",
+            "number": "12.5",
+            "character": "Hatate Himekaidou",
+            "path_valid": false
+        },
+        {
+            "title": "Touhou 9.5 - Shoot the Bullet",
+            "installed": false,
+            "patched": false,
+            "unpatched_file": "",
+            "patched_file": "",
+            "desc": " Bunbunmaru Newspaper reporter Aya Shameimaru is out looking for a scoop. Playing as Aya, you will find plenty of interesting Gensokyo girls to look into. ",
+            "developer": "Team Shanghai Alice",
+            "publisher": "Team Shanghai Alice",
+            "released": "30/12/2005",
+            "genre": "Vertical Bullet Hell Photography Shooting Game",
+            "id": 11,
+            "cover": null,
+            "abbreviation": "StB",
+            "number": "9.5",
+            "character": "Aya Shameimaru",
+            "path_valid": false
+        }
+    ]
+}
