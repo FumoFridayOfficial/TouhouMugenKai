@@ -65,6 +65,6 @@ Contributions to Touhou Mugen-kai are welcome! If you have any bug reports, feat
 - [Touhou Project](http://www16.big.or.jp/~zun/) ZUN for creating the wonderful world of Touhou.
 
 ## License
-This project is licensed under the [GNU General Public License v3.0](LICENSE).
+This project is licensed under the ([MIT LICENSE](https://github.com/FumoFridayOfficial/TouhouMugenKai/blob/ea8d95438607d77e0aee25b698785f077f1c4cff/LICENSE)).
 
 Fumos are coding...
