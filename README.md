@@ -57,7 +57,7 @@ Thank you for your support!
 6. Press play and play your favourite game.
 
 ## Contributing
-Contributions to Touhou Mugen-kai are welcome! If you have any bug reports, feature requests, or improvements, please submit them as issues or create pull requests. please [follow the guidelines for contributing](CONTRIBUTING.md)(needs work on it) and submit a pull request.
+Contributions to Touhou Mugen-kai are welcome! If you have any bug reports, feature requests, or improvements, please submit them as issues or create pull requests. please [follow the guidelines for contributing](CONTRIBUTING.md) and submit a pull request.
 
 
 ## Acknowledgements
