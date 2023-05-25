@@ -28,7 +28,7 @@ Touhou Mugen-kai is a Python-based GUI launcher designed to provide easy access 
 - Bugs may happen, if anything restart the launcher for quick fix.
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/your-username/touhou-mugenkai.git`
+1. Clone the repository: `git clone https://github.com/FumoFridayOfficial/TouhouMugenKai.git`
 2. Install the required dependencies: `pip install -r requirements.txt`
 3. Launch the application: `python launcher.py`
 
