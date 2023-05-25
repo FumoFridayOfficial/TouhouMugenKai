@@ -1,0 +1,59 @@
+{
+    "Library": "Touhou Photography games",
+    "games": [
+        {
+            "title": "Touhou 16.5 - Violet Detector",
+            "installed": false,
+            "patched": false,
+            "unpatched_file": "",
+            "patched_file": "",
+            "desc": "Photography comes back!!",
+            "developer": "Team Shanghai Alice",
+            "publisher": "Team Shanghai Alice",
+            "released": "10/08/2018",
+            "genre": "Vertical Bullet Hell Photography Shooting Game",
+            "id": 27,
+            "cover": null,
+            "abbreviation": "VD",
+            "number": "16.5",
+            "character": "Sumireko Usami",
+            "path_valid": false
+        },
+        {
+            "title": "Touhou 12.5 - Double Spoiler",
+            "installed": false,
+            "patched": false,
+            "unpatched_file": "",
+            "patched_file": "",
+            "desc": "Succesor to StB",
+            "developer": "Team Shanghai Alice",
+            "publisher": "Team Shanghai Alice",
+            "released": "14/03/2010",
+            "genre": "Vertical Bullet Hell Photography Shooting Game",
+            "id": 17,
+            "cover": null,
+            "abbreviation": "DS",
+            "number": "12.5",
+            "character": "Hatate Himekaidou",
+            "path_valid": false
+        },
+        {
+            "title": "Touhou 9.5 - Shoot the Bullet",
+            "installed": false,
+            "patched": false,
+            "unpatched_file": "",
+            "patched_file": "",
+            "desc": "StB, awesome new mechanics! Aya!",
+            "developer": "Team Shanghai Alice",
+            "publisher": "Team Shanghai Alice",
+            "released": "30/12/2005",
+            "genre": "Vertical Bullet Hell Photography Shooting Game",
+            "id": 11,
+            "cover": null,
+            "abbreviation": "StB",
+            "number": "9.5",
+            "character": "Aya Shameimaru",
+            "path_valid": false
+        }
+    ]
+}
