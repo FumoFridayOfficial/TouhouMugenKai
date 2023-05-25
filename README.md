@@ -4,8 +4,8 @@ Python GUI Launcher for all Touhou-related games and fan games.
 
 ![Touhou Mugenkai](https://cdn.discordapp.com/attachments/839837396845330474/1111074886153158736/TouhouMugenkai3.png)
 
-In the upcoming days i'll release some gifs and visual help i've created the readme.md just to have it all set up for tomorrow.
-
+### In the upcoming days i'll release some gifs and visual help i've created the readme.md just to have it all set up for tomorrow.
+### Not only that i'll fully release the software in less than a day.
 ## What is Touhou Mugen-kai
 Touhou Mugen-kai is a Python-based GUI launcher designed to provide easy access to a wide range of Touhou games and fan games. It aims to create a unified platform for Touhou enthusiasts to manage their game library, launch games, and explore the rich world of Touhou fan games.
 
