@@ -880,6 +880,7 @@ def SearchTouhouGamesInFolder():
             for file in files:
                 if re.match(pc98_games_pattern, file):
                     game["file_path"] = os.path.join(game_directory, file)
+                    game["is_patched"] = False
                     break
 
             all_games.append(game)
@@ -1096,7 +1097,8 @@ def SaveTouhouGamesPaths(s,a,u):
                                                unpatched_file=game["file_path"],
                                                patched_file=game["patched_file_path"],
                                                installed=True,
-                                               patched=True)
+                                               patched=True,
+                                               path_valid = True)
         Log(f"Game {game['game_title']} has been updated."+f"\nNew directory for this game is {game['game_directory']}")
 
     dpg.add_text(default_value=f"{i} games have been updated with new info, you can check the logs now.",parent="SaveInfoGames",color=[255,255,0])
@@ -1844,7 +1846,7 @@ with dpg.window(label="Launcher Main Menu",tag="MainWindow",width=ViewPortWidth,
 
                 with dpg.window(label="Changelog",width=550,height=620,pos=(150,10),tag="ChangelogWindow",show=False):
                     dpg_markdown.add_text("__Changelog__")
-                    dpg.add_text(f"Current build {CURRENTBUILD[1]} {CURRENTBUILD[0]}\nRelease date: {CURRENTBUILD[2]}.")
+                    dpg.add_text(f"Current build {CURRENTBUILD[1]} {CURRENTBUILD[0]}\nRelease date: {CURRENTBUILD[2]} Cache: (JVVH).")
                     dpg.add_separator()
                     with dpg.child_window(height=400):
                         with dpg.tab_bar():
