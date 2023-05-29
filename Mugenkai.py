@@ -305,10 +305,14 @@ else:
     print("Running as a .py script")
     configINI.read(os.path.join(CurrentDirectory, "LauncherConfig.ini"))
 
-EmulatorPath = configINI['EmulatorFolderPath']['path']
-EmulatorConfigINI = configparser.ConfigParser()
-EmulatorConfigINI.read(str(EmulatorPath)+'\\np21nt.ini',encoding='utf-8')
-
+def EmulatorLoad():
+    global EmulatorPath, EmulatorConfigINI
+    EmulatorPath = configINI['EmulatorFolderPath']['path']
+    EmulatorConfigINI = configparser.ConfigParser()
+    EmulatorConfigINI.read(str(EmulatorPath)+'\\np21nt.ini',encoding='utf-8')
+    try:dpg.set_value("CurrentEmulatorPath",f"{EmulatorPath}")
+    except:pass
+EmulatorLoad()
 DisclaimerAcceptedINI = configINI['Disclaimer']['Accepted']
 
 def validate_library(library_data):
@@ -452,7 +456,7 @@ def GetGameOBJbyTitle(title):
 def openFolder(s,a,u):
     os.startfile(u)
 
-def find_process_by_name(process_name, timeout=10):
+def find_process_by_name(process_name, timeout=5):
     end_time = time.time() + timeout
     while time.time() < end_time:
         for proc in psutil.process_iter(['pid', 'name']):
@@ -471,7 +475,9 @@ with dpg.window(label="Log",tag="LogWindow",show=False,on_close=dpg.delete_item(
     with dpg.group(tag="StatusActions"):pass
 
 def FoundGamesInFoundLibrary(found_library,Parent):
+    total_games = len(found_library.games)
     for n,found_game in enumerate(found_library.games):
+        dpg.set_value(item="LoadingTextInfo",value=f"Finding games from {found_library.name}: {n} / {total_games}")
         UserData = []
         UserData.append(found_game)
         UserData.append(found_library)
@@ -927,6 +933,7 @@ def ListAllLibraries():
     with dpg.group(tag="ListAllLibrariesGroup",parent="AllLibrariesTab"):
         for library_name in manager.list_libraries():
             found_library = (manager.search_libraries(library_name.name))[0]
+            dpg.set_value(item="LoadingTextInfo",value=f"Listing libraries: Library found {found_library}")
             with dpg.tree_node(label=found_library.name,tag=found_library.name):
                 Parent = dpg.last_item()
                 dpg.add_text("Games in library: "+str(found_library.__len__()))
@@ -943,17 +950,26 @@ def ThcrapValidator():
     #validate if thcrap is installed
 
 def EmulatorSave(s,a,u):
-    path = dpg.get_value("EmulatorFolderPath")
-    if os.path.exists(path):
-        try:configINI['EmulatorFolderPath'] = {'path': path}
-        except:dpg.set_value("EmulatorPathStatus","A path hasn't been selected")
-        else:
-            with open(executable_dir+'\LauncherConfig.ini', 'w') as configfile:configINI.write(configfile)
-            dpg.set_value("EmulatorPathStatus","Path has been saved")
-    else:dpg.set_value("EmulatorPathStatus","This path doesn't exists")
+    if s == "SaveBtn":
+        path = dpg.get_value("EmulatorFolderPath")
+        if os.path.exists(path):
+            try:configINI['EmulatorFolderPath'] = {'path': path}
+            except:dpg.set_value("EmulatorPathStatus","A path hasn't been selected")
+            else:
+                with open(executable_dir+'\LauncherConfig.ini', 'w') as configfile:configINI.write(configfile)
+                dpg.set_value("EmulatorPathStatus","Path has been saved")
+                EmulatorLoad()
+        else:dpg.set_value("EmulatorPathStatus","This path doesn't exists")
+    elif s == "ClearBtn":
+        configINI['EmulatorFolderPath'] = {'path': ""}
+        with open(executable_dir+'\LauncherConfig.ini', 'w') as configfile:configINI.write(configfile)
+        dpg.set_value("EmulatorPathStatus","Path has been cleared")
+        dpg.set_value("CurrentEmulatorPath","")
+        EmulatorLoad()
 
 def ListAllGames():
     dpg.delete_item("ListAllGamesGroup")
+    dpg.set_value(item="LoadingTextInfo",value=f"Listing all games.")
     with dpg.group(tag="ListAllGamesGroup",parent="AllGamesTab"):
         dpg.add_text("Games:")
         dpg.add_separator()
@@ -975,6 +991,7 @@ def ListAllGames():
 
 def EditGameInfo():
     dpg.delete_item("EditGameInfoGroup")
+    dpg.set_value(item="LoadingTextInfo",value=f"Creating editing game info tab.")
     with dpg.group(tag="EditGameInfoGroup",parent="EditGameInfoTab"):
         dpg.add_text("Here you can edit a games info by itself.\nRemember that when you press SAVE all info will be saved across all libraries.\nThis is useful when you don't want to edit the same game on multiple libraries.")
         dpg.add_separator()
@@ -1174,6 +1191,7 @@ def EditMenu():
                     dpg.add_loading_indicator(circle_count=8)
                     dpg.add_text("Loading")
                     dpg.add_text("It might take a while.")
+                    dpg.add_text("",tag="LoadingTextInfo")
                 with dpg.group(tag="LoadingComplete",show=False):
                     with dpg.tab_bar(tag="TabBar01"):
                         with dpg.tab(label="Edit/Create libraries"):
@@ -1219,11 +1237,11 @@ def EditMenu():
                             dpg.add_button(label="How it works?",callback=lambda:InfoWindow())
                             dpg.add_button(label="Log window",callback=lambda:dpg.show_item(item="LogWindow"))
                             dpg.add_button(label="Save all libraries into one file",callback=lambda:manager.save_libraries(executable_dir+"\\Libraries\\\AllLibraries\\LibrariesFile.json"))
-                            dpg.add_button(label="Print all games",callback=lambda:print([game.title for game in Game.all_games]))
+                            #dpg.add_button(label="Print all games",callback=lambda:print([game.title for game in Game.all_games]))
                             dpg.add_button(label="Font manager",callback=lambda:dpg.show_font_manager())
                             dpg.add_button(label="Style editor",callback=lambda:dpg.show_style_editor())
                             dpg.add_button(label="Create backup",callback=CreateBackupLibraries)
-                            dpg.add_button(label="Close",callback=lambda:dpg.stop_dearpygui())
+                            dpg.add_button(label="Close",callback=lambda:dpg.hide_item("EditLibraryWindow"))
         
         dpg.configure_item(item="LoadingComplete",show=True)
         dpg.configure_item(item="LoadingBar",show=False)
@@ -1265,7 +1283,7 @@ def updateLaunchedGameInfo():
     emulatorRun = dpg.get_value("CheckBoxStartWithEmulator")
     if emulatorRun == True:
             pid = find_process_by_name("np21nt.exe")
-    if pid is not None and emulatorRun == True:
+    if pid is not None or emulatorRun == True:
         print("PID:", pid)
         dpg.set_value(item="CurrentGameStatus",value="Status: Launching...")
         dpg.configure_item(item="CurrentGameStatus",color=[255,255,0])
@@ -1647,9 +1665,10 @@ with dpg.window(label="Launcher Main Menu",tag="MainWindow",width=ViewPortWidth,
             dpg.add_input_text(label="Path",tag="EmulatorFolderPath")
             with dpg.group(horizontal=True):
                 dpg.add_text("Current path: ")
-                dpg.add_text(default_value=EmulatorPath,color=[255,255,0])
+                dpg.add_text(default_value="",tag="CurrentEmulatorPath",color=[255,255,0])
             with dpg.group(horizontal=True):
-                dpg.add_button(label="Save",callback=EmulatorSave)
+                dpg.add_button(label="Save",tag="SaveBtn",callback=EmulatorSave)
+                dpg.add_button(label="Clear",tag="ClearBtn",callback=EmulatorSave)
                 dpg.add_text(default_value="",tag="EmulatorPathStatus")
         with dpg.menu(label=f"Game Info"):
             dpg.add_text("Here you can see what game is playing and some info about it.")
@@ -1661,7 +1680,6 @@ with dpg.window(label="Launcher Main Menu",tag="MainWindow",width=ViewPortWidth,
             dpg.add_text(tag="ElapsedTimeGame",default_value="Elapsed time: ")
             dpg.add_text(tag="CurrentGameStatus",default_value="Status: ")
         dpg.add_text(f"Currently playing: Nothing",tag="MenuBarPlayingGame")
-
     # BREAK
     # MAIN WINDOW
     with dpg.group(horizontal=True,parent="MainWindow"):
@@ -1877,7 +1895,7 @@ with dpg.window(label="Launcher Main Menu",tag="MainWindow",width=ViewPortWidth,
                         with dpg.group(horizontal=True):
                             dpg.add_button(label="Clear all paths",callback=ClearAllGamesPath)
                             dpg.add_button(label="Cancel",callback=lambda:dpg.configure_item(item="ConfirmClearPath",show=False))
-    
+
 def GamesCreator():
     with dpg.window(label="Games Creator",tag="AddGames",no_resize=True,pos=(705, 20), width=350, height=425):
         with dpg.menu_bar(parent=dpg.last_item()):
