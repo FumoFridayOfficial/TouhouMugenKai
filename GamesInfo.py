@@ -488,6 +488,8 @@ TouhouGames = {
 #print(TouhouGames[int(UserInput)]["Title"])
 
 # OMG WHO PUT THIS IN HERE IT'S WASTING SO MUCH SPACE WTFFFFFFF
+# Oh god i forgot to remove this when i uploaded it. Too late now.
+# Also "TouhouGames.py" doesn't serve much purpose honestly.
 # #%#(,&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%.(&%%&@@@@@@@@@@@@@@@@@@@@@@@@@@@&(*%&&&@@@@@@@@@@@@@@@@@@@@@#######
 # @@@* ,####(.&@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@* ,%%###,&@@@@@@@@@@@&*,&%*.. ,***********,. ./&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
